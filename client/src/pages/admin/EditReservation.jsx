@@ -20,28 +20,28 @@ const EditReservation = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
+        const fetchReservation = async () => {
+            try {
+                const data = await getReservation(reservationId);
+
+                setForm({
+                    ownerName: data.ownerName || "",
+                    petName: data.petName || "",
+                    petType: data.petType || "Dog",
+                    petAge: data.petAge || "",
+                    checkInDate: data.checkInDate ? data.checkInDate.split("T")[0] : "",
+                    checkOutDate: data.checkOutDate ? data.checkOutDate.split("T")[0] : "",
+                    groomingOption: data.groomingOption || false,
+                    status: data.status || "checked-in",
+                });
+            } catch (error) {
+                console.error(`Error fetching reservation: ${error}`);
+                setError("Failed to load reservation");
+            }
+        };
+
         fetchReservation();
-    }, []);
-
-    const fetchReservation = async () => {
-        try {
-            const data = await getReservation(reservationId);
-
-            setForm({
-                ownerName: data.ownerName || "",
-                petName: data.petName || "",
-                petType: data.petType || "Dog",
-                petAge: data.petAge || "",
-                checkInDate: data.checkInDate ? data.checkInDate.split("T")[0] : "",
-                checkOutDate: data.checkOutDate ? data.checkOutDate.split("T")[0] : "",
-                groomingOption: data.groomingOption || false,
-                status: data.status || "checked-in",
-            });
-        } catch (error) {
-            console.error(`Error fetching reservation: ${error}`);
-            setError("Failed to load reservation");
-        }
-    };
+    }, [reservationId]);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
