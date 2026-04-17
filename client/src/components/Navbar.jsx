@@ -46,7 +46,7 @@ const Navbar = () => {
                     <div className={styles.navbarRight}>
                         <NavLink to="/check-in" onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? `${styles.actBtn} ${styles.active}` : styles.actBtn}>Check In</NavLink>
                         <NavLink to="/reservation/form" onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? `${styles.actBtn} ${styles.active}` : styles.actBtn}>Reservation Form</NavLink>
-                        <NavLink to="/reservation" onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? `${styles.actBtn} ${styles.active}` : styles.actBtn}>Reservation Lookup</NavLink>
+                        <NavLink to="/reservation" end onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? `${styles.actBtn} ${styles.active}` : styles.actBtn}>Reservation Lookup</NavLink>
                         <NavLink to="/admin" onClick={() => setMenuOpen(false)} className={({isActive}) => isActive ? `${styles.actBtn} ${styles.active}` : styles.actBtn}>Admin</NavLink>
                     </div>
                 </nav>
