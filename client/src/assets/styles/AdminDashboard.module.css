@@ -1,0 +1,178 @@
+.dashboardPage {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboardContainer {
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+.dashboardContainer h1 {
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.dashboardContainer h2 {
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.searchInput {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    padding: 0.85rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.sortSelect {
+    padding: 0.85rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-width: 180px;
+}
+
+.reservationGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.reservationCard {
+    background-color: #fff;
+    border: 2px solid blanchedalmond;
+    border-radius: 12px;
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    display: flex;;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservationCard p {
+    margin: 0.45rem 0;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.actionButton,
+.deleteButton {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.actionButton {
+    background-color: blanchedalmond;
+    color: #333;
+}
+
+.deleteButton {
+    background-color: #d9534f;
+    color: white;
+}
+
+.actionButton:hover,
+.deleteButton:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.emptyState {
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .dashboardPage {
+        padding: 1.5rem 1rem;
+    }
+
+    .dashboardContainer h1 {
+        font-size: 1.7rem;
+    }
+
+    .dashboardContainer h2 {
+        font-size: 1.15rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .searchInput,
+    .sortSelect {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+    .dashboardPage {
+        padding: 1rem 0.75rem;
+    }
+
+    .dashboardContainer h1 {
+        font-size: 1.4rem;
+    }
+
+    .dashboardContainer h2 {
+        font-size: 1rem;
+    }
+
+    .reservationCard {
+        padding: 0.9rem;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+    }
+
+    .actionButton,
+    .deleteButton {
+        width: 100%;
+    }
+
+    .searchInput,
+    .sortSelect {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+    }
+}

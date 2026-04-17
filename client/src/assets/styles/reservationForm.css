@@ -1,0 +1,185 @@
+#reservation-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.reservation-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservation-container h1 {
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.reservation-subtext {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.reservation-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fff;
+    border: 2px solid blanchedalmond;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    width: 100%;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.checkbox-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+}
+
+.submit-btn {
+    margin-top: 0.5rem;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: blanchedalmond;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+    background-color: #f5dfbf;
+}
+
+.error-message {
+    color: #b00020;
+    font-weight: 600;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.confirmation-card {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 2px solid #cfe8cf;
+    background-color: #f6fff6;
+    box-sizing: border-box;
+}
+
+.confirmation-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #reservation-page {
+        padding: 1.5rem 1rem;
+    }
+
+    .reservation-container h1 {
+        font-size: 1.7rem;
+    }
+
+    .reservation-subtext {
+        font-size: 0.95rem;
+    }
+
+    .reservation-form {
+        padding: 1.1rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+    #reservation-page {
+        padding: 1rem 0.75rem;
+    }
+
+    .reservation-container h1 {
+        font-size: 1.4rem;
+    }
+
+    .reservation-subtext {
+        font-size: 0.9rem;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+    }
+
+    .submit-btn {
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .confirmation-card {
+        padding: 1rem;
+    }
+}

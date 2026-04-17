@@ -1,0 +1,90 @@
+#about-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-hero h1 {
+    margin: 0 0 0.75rem 0;
+    font-size: 2rem;
+}
+
+.about-hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.about-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid blanchedalmond;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.about-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.about-card p {
+    margin: 0.75rem 0;
+    line-height: 1.7;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #about-page {
+        padding: 1.5rem 1rem;
+    }
+
+    .about-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .about-card {
+        padding: 1.1rem;
+    }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+    #about-page {
+        padding: 1rem 0.75rem;
+    }
+
+    .about-hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .about-hero p,
+    .about-card p {
+        font-size: 0.95rem;
+    }
+
+    .about-card h2 {
+        font-size: 1.2rem;
+    }
+}

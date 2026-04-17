@@ -1,0 +1,170 @@
+#footer-in-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2rem 1rem;
+    gap: 2rem;
+}
+
+#posh-paws-info,
+#location,
+#contact-partners {
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#posh-paws-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+#posh-paws-info p {
+    max-width: 850px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+#location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#location iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+}
+
+#contact-partners {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+#contact-inf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+#contact-inf p,
+#contact-inf h4 {
+    max-width: 850px;
+    word-break: break-word;
+    line-height: 1.6;
+}
+
+#partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+#partner-logos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#partner-logos a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logos {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid blanchedalmond;
+    object-fit: contain;
+    height: 100%;
+}
+
+#footer-in-main p {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+#footer-in-main h4 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #footer-in-main {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    #location iframe {
+        height: 350px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .logos {
+        max-width: 200px;
+    }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+    #footer-in-main {
+        padding: 1rem 0.75rem;
+        gap: 1.25rem;
+    }
+
+    #location iframe {
+        height: 250px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    #partner-logos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logos {
+        max-width: 180px;
+    }
+}
