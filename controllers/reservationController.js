@@ -91,7 +91,10 @@ const getReservationById = async (req, res) => {
         res.status(200).json(reservation);
     } catch (error) { // catch any unexpected errors
         console.log(`Get reservation error: ${error}`); // Log the error for debugging purposes
-        res.status(500).json({ message: "Server error while fetching reservation." }); 
+        res.status(500).json({ 
+            message: "Server error while fetching reservation.",
+            error: error.message
+         }); 
     }
 };
 
