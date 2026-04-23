@@ -91,24 +91,44 @@ const getReservationById = async (req, res) => {
         res.status(200).json(reservation);
     } catch (error) { // catch any unexpected errors
         console.log(`Get reservation error: ${error}`); // Log the error for debugging purposes
-        res.status(500).json({ 
+        res.status(500).json({
             message: "Server error while fetching reservation.",
             error: error.message
-         }); 
+        });
     }
 };
 
 // GET all reservations (for admin)
 const getAllReservations = async (req, res) => {
     try {
-        const reservations = await Reservation.find().sort({ createdAt: -1 }); // Sort by most recent first
-        res.json(reservations);
-    } catch (error) {
-        console.error(`Fetch all reservations error:`, error); // Log the error for debugging
-        res.status(500).json({ message: "Server error while fetching reservations." }); // Send a generic error message to the client
+        console.log("GET /api/reservations route hit");
 
+        const reservations = await Reservation.find({}).lean();
+
+        console.log("Reservations fetched successfully:", reservations.length);
+
+        return res.status(200).json(reservations);
+    } catch (error) {
+        console.error("Fetch all reservations error:", error);
+        return res.status(500).json({
+            message: "Server error while fetching reservations.",
+            error: error.message,
+        });
     }
 };
+
+// const getAllReservations = async (req, res) => {
+//     try {
+//         const reservations = await Reservation.find();
+//         res.status(200).json(reservations);
+//     } catch (error) {
+//         console.error("Fetch all reservations error:", error); // Log the error for debugging
+//         res.status(500).json({ // Send a generic error message to the client
+//             message: "Server error while fetching reservations.",
+//             error: error.message
+//         });
+//     }
+// };
 
 // Update Reservation 
 
@@ -119,10 +139,10 @@ const updateReservation = async (req, res) => {
         const updatedReservation = await Reservation.findOneAndUpdate(
             { reservationId },
             req.body,
-            { new: true, runValidators:  true }
+            { new: true, runValidators: true }
         );
 
-        if (!updateReservation) {
+        if (!updatedReservation) {
             return res.status(404).json({ message: "Reservation not found!" });
         }
 
@@ -136,8 +156,8 @@ const updateReservation = async (req, res) => {
             message: "Server error while updating reservation.",
             error: error.message,
         });
-        };
-    }
+    };
+}
 
 // Delete Reservation
 
@@ -152,18 +172,17 @@ const deleteReservation = async (req, res) => {
         }
 
         await Suite.findOneAndUpdate(
-            { 
+            {
                 suiteNumber: reservation.suiteNumber,
-                petType: reservation.petType, 
+                petType: reservation.petType,
             },
             { isAvailable: true }
         );
 
-        await Reservation.deleteOne({ reservationId });
-
         res.status(200).json({
             message: `Reservation ${reservationId} deleted successfully!`,
         });
+
     } catch (error) {
         console.log(`Delete reservation error: ${error}`);
         res.status(500).json({
