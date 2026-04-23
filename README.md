@@ -136,13 +136,13 @@ npm start
 * CRUD operations
 * Algorithm implementation (search, sort, assignment)
 * Component-based frontend development
+* Integrated MongoDB Atlas
+* Deployed backend API (Render)
 
 ---
 
 ## Future Improvements
 
-* Deploy backend API (Render)
-* Integrate MongoDB Atlas
 * Add authentication security (JWT)
 * Improve mobile responsiveness
 
