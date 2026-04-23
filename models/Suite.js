@@ -10,7 +10,7 @@ const suiteSchema = new mongoose.Schema({
         required: true,
         enum: ["Dog", "Cat"],
     },
-    isAvalable: {
+    isAvailable: {
         type: Boolean,
         default: true,
     },

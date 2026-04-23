@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI)
     const dogSuites = Array.from({ length: 13 }, (_, i) => ({
         suiteNumber: i + 1,
         petType: "Dog",
-        isAvalable: true,
+        isAvailable: true,
     }));
 
     const catSuites = Array.from( { length: 12 }, (_, i) => ({

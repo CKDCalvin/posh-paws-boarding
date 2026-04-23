@@ -1,19 +1,28 @@
 const Suite = require("../models/Suite");
 
 const assignSuite = async (petType) => { // Find the first empty suite for the specific pet type and assign it to the reservation pet  then mark it as unavailable
-    const availableSuite = await Suite.findOne({
-        petType,
-        isAvalable: true,
-    }).sort({ suiteNumber: 1});
+    try {
+        console.log(`Assigning suite for pet type: ${petType}`);
 
-    if (!availableSuite) {
-        return null;
+        const availableSuite = await Suite.findOne({
+            petType,
+            isAvailable: true,
+        }).sort({ suiteNumber: 1 });
+
+        console.log("Suite found:", availableSuite);
+
+        if (!availableSuite) {
+            return null;
+        }
+
+        availableSuite.isAvailable = false;
+        await availableSuite.save();
+
+        return availableSuite;
+    } catch (error) {
+        console.log(`Error in assignment: ${error}`);
+        throw error;
     }
-
-    availableSuite.isAvalable = false;
-    await availableSuite.save();
-
-    return availableSuite;
 };
 
 module.exports = assignSuite;
